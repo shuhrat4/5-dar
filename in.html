@@ -1,1 +1,17 @@
-onclick="handleDeleteTodo(${item.id})
+<div class="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-3">
+       <div class="flex items-center space-x-3">
+        <span class="text-sm text-gray-500">${item.id}</span>
+        <strong id="todo-text-${item.id}" class="text-lg text-gray-800">${item.todoValue}</strong>
+    </div>
+       <div class="flex items-center space-x-3">
+          <div onclick="handleCompletedClick(${item.id})" class="w-6 h-6 flex items-center justify-center cursor-pointer rounded-full border-2 border-gray-400 transition-all">
+            <div class="w-full h-full ${item.isComplated ? 'bg-blue-500' : ''} rounded-full"></div>
+        </div>
+                <button onclick="handleDeleteTodo(${item.id})" class="px-3 py-2 rounded-md bg-red-500 text-white font-medium hover:bg-red-600 transition" type="button">
+            Delete
+        </button>
+                <button onclick="handleUpdateTodo(${item.id})" class="px-3 py-2 rounded-md bg-blue-500 text-white font-medium hover:bg-blue-600 transition" type="button">
+            Update
+        </button>
+    </div>
+</div>
